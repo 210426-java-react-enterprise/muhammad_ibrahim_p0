@@ -16,14 +16,14 @@ public class HumanUsers {
     private String email;
     private String first_name;
     private String last_name;
-    private long phone_number;
+    private String phone_number;
 
     public HumanUsers(){
 
     }
 
     public HumanUsers(String username,String password, String email,
-                      String first_name, String last_name, long phone_number){
+                      String first_name, String last_name, String phone_number){
         System.out.println("HumanUsers");
         this.username = username;
         this.password = password;
@@ -81,11 +81,24 @@ public class HumanUsers {
         this.last_name = last_name;
     }
 
-    public long getPhone_number() {
+    public String getPhone_number() {
         return phone_number;
     }
 
-    public void setPhone_number(long phone_number) {
+    public void setPhone_number(String phone_number) {
         this.phone_number = phone_number;
+    }
+
+    @Override
+    public String toString() {
+        return "HumanUsers{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", first_name='" + first_name + '\'' +
+                ", last_name='" + last_name + '\'' +
+                ", phone_number=" + phone_number +
+                '}';
     }
 }
