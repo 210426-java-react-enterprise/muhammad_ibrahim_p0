@@ -15,6 +15,21 @@ public class HomeScreen {
 
 
         try(BufferedReader consoleReader = new BufferedReader(new InputStreamReader(System.in))){
+            System.out.println(">> ");
+            String userInput = consoleReader.readLine();
+
+            switch (userInput){
+                case "1":
+                    System.out.println("Navigating to the Register screen");
+                    RegisterScreen registerScreen = new RegisterScreen(consoleReader);
+                    registerScreen.render();
+                    break;
+                case "2":
+                    System.out.println("Navigating to the Login screen");
+                    break;
+                default:
+                    System.out.println("Invalid selection!");
+            }
 
 
 
