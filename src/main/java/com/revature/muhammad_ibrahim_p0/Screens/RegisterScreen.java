@@ -7,7 +7,15 @@
 
 package com.revature.muhammad_ibrahim_p0.Screens;
 
+import com.revature.muhammad_ibrahim_p0.models.HumanUsers;
+
+import java.io.BufferedReader;
+
 public class RegisterScreen {
+
+    private BufferedReader consoleReader;
+
+    public RegisterScreen(BufferedReader consoleReader){ this.consoleReader = consoleReader;}
 
     public void render() {
         String firstname;
@@ -17,5 +25,37 @@ public class RegisterScreen {
         String email;
         String phone_number;
         // The above are locally scoped and don't get initialized
+
+        try{
+            System.out.println("+******************************+");
+            System.out.println("Register for a new account");
+            System.out.println("+******************************+");
+
+            System.out.print("First name: ");
+            firstname = consoleReader.readLine();
+
+            System.out.print("Last name: ");
+            lastname = consoleReader.readLine();
+
+            System.out.print("User name: ");
+            username = consoleReader.readLine();
+
+            System.out.print("Password");
+            password = consoleReader.readLine();
+
+            System.out.print("Email: ");
+            email = consoleReader.readLine();
+
+            System.out.print("Phone number: ");
+            phone_number = consoleReader.readLine();
+
+            HumanUsers newUser = new HumanUsers(username, password, firstname,lastname, email, phone_number);
+            System.out.println("HumanUsers constructor invoked!");
+            System.out.println("New user created with the profile: " + newUser);
+
+
+        }catch (Exception e){
+
+        }
     }
 }
