@@ -4,6 +4,7 @@
  * In the class, we declare private fields that have items of the HumanUsers.
  * We create two constructors, one empty, one with the declared fields.
  * We use getters and setters to access the private fields of the HumanUsers object.
+ * Just an encapsulation of fields
  */
 
 package com.revature.muhammad_ibrahim_p0.models;

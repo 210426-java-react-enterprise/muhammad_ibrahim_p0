@@ -16,5 +16,6 @@ public class RegisterScreen {
         String password;
         String email;
         String phone_number;
+        // The above are locally scoped and don't get initialized
     }
 }
