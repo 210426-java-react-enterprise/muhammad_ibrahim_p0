@@ -5,10 +5,14 @@
 
 package com.revature.muhammad_ibrahim_p0.Screens;
 
+import com.revature.muhammad_ibrahim_p0.DAO.UserDAO;
+import com.revature.muhammad_ibrahim_p0.models.HumanUsers;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 
 public class LoginScreen {
+    private UserDAO userDAO;
     private BufferedReader consoleReader;
 
     public LoginScreen(BufferedReader consoleReader) { this.consoleReader = consoleReader;}
@@ -28,10 +32,17 @@ public class LoginScreen {
             System.out.print("Password: ");
             password = consoleReader.readLine();
 
+            if(username != null && !username.isEmpty() && password != null && !password.isEmpty()){
+               // HumanUsers confirmUser = userDAO.findUserByUsernameAndPassword(username,password);
+            }
+
+
         }catch (IOException e){
             e.printStackTrace();
         }catch (Exception e){
             e.printStackTrace();
         }
     }
+
+
 }

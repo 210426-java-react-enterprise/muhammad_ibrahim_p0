@@ -91,12 +91,31 @@ public class HumanUsers {
     }
 
 
-    // allows to pass newuser into dao
+    // allows to pass newuser into dao for register screen
     public String toFileString(){
         return String.format("%s;%s;%s;%s;%s;%s", username,password,email,first_name,last_name,phone_number);
     }
 
+    // allows to pass existing user into dao from login screen check
+    public String toFile(){
+        return String.format("%s;%s",username,password);
+    }
+
     @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("HumanUsers{");
+        sb.append("id=").append(id);
+        sb.append(", username='").append(username).append('\'');
+        sb.append(", password='").append(password).append('\'');
+        sb.append(", email='").append(email).append('\'');
+        sb.append(", first_name='").append(first_name).append('\'');
+        sb.append(", last_name='").append(last_name).append('\'');
+        sb.append(", phone_number='").append(phone_number).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
+
+    /*   @Override
     public String toString() {
         return "HumanUsers{" +
                 "id=" + id +
@@ -107,5 +126,5 @@ public class HumanUsers {
                 ", last_name='" + last_name + '\'' +
                 ", phone_number=" + phone_number +
                 '}';
-    }
+    }*/
 }
