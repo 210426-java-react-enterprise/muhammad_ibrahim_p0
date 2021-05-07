@@ -28,7 +28,7 @@ public class RegisterScreen {
 
         try{
             System.out.println("+******************************+");
-            System.out.println("Register for a new account");
+            System.out.println("Register for a new profile");
             System.out.println("+******************************+");
 
             System.out.print("First name: ");
@@ -40,7 +40,7 @@ public class RegisterScreen {
             System.out.print("User name: ");
             username = consoleReader.readLine();
 
-            System.out.print("Password");
+            System.out.print("Password: ");
             password = consoleReader.readLine();
 
             System.out.print("Email: ");
