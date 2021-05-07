@@ -90,6 +90,12 @@ public class HumanUsers {
         this.phone_number = phone_number;
     }
 
+
+    // allows to pass newuser into dao
+    public String toFileString(){
+        return String.format("%s;%s;%s;%s;%s;%s", username,password,email,first_name,last_name,phone_number);
+    }
+
     @Override
     public String toString() {
         return "HumanUsers{" +
