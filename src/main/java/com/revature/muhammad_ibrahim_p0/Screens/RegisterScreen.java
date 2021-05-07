@@ -7,12 +7,14 @@
 
 package com.revature.muhammad_ibrahim_p0.Screens;
 
+import com.revature.muhammad_ibrahim_p0.DAO.UserDAO;
 import com.revature.muhammad_ibrahim_p0.models.HumanUsers;
 
 import java.io.BufferedReader;
 
 public class RegisterScreen {
 
+    private UserDAO userDAO = new UserDAO();
     private BufferedReader consoleReader;
 
     public RegisterScreen(BufferedReader consoleReader){ this.consoleReader = consoleReader;}
@@ -52,6 +54,7 @@ public class RegisterScreen {
             HumanUsers newUser = new HumanUsers(username, password, firstname,lastname, email, phone_number);
             System.out.println("HumanUsers constructor invoked!");
             System.out.println("New user created with the profile: " + newUser);
+            userDAO.saveUserToFile(newUser);
 
 
         }catch (Exception e){

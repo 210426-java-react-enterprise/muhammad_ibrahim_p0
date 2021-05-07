@@ -33,7 +33,16 @@ public class LoginScreen {
             password = consoleReader.readLine();
 
             if(username != null && !username.isEmpty() && password != null && !password.isEmpty()){
-               // HumanUsers confirmUser = userDAO.findUserByUsernameAndPassword(username,password);
+               HumanUsers confirmUser = userDAO.findUserByUsernameAndPassword(username,password);
+               if (confirmUser != null) {
+                   System.out.println("Login Successful!");
+               }
+               else{
+                   System.out.println("Login Failed!");
+               }
+            }
+            else{
+                System.out.println("Please provide login credentials!");
             }
 
 

@@ -30,7 +30,7 @@ public class HomeScreen {
                     registerScreen.render();
                     break;
                 case "2":
-                    System.out.print("Navigating to the Login screen");
+                    System.out.println("Navigating to the Login screen");
                     LoginScreen loginScreen = new LoginScreen(consoleReader);
                     loginScreen.render();
                     break;
