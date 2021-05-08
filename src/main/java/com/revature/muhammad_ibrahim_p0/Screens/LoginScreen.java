@@ -12,7 +12,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 
 public class LoginScreen {
-    private UserDAO userDAO;
+    private UserDAO userDAO = new UserDAO();
     private BufferedReader consoleReader;
 
     public LoginScreen(BufferedReader consoleReader) { this.consoleReader = consoleReader;}
