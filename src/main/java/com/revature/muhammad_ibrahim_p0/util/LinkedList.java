@@ -1,4 +1,6 @@
-package com.revature.muhammad_ibrahim_p0;
+package com.revature.muhammad_ibrahim_p0.util;
+
+import com.revature.muhammad_ibrahim_p0.List;
 
 /**
  * A simple implementation of a doubly Linked-list structure that does not
@@ -6,7 +8,7 @@ package com.revature.muhammad_ibrahim_p0;
  *
  * @param <T>
  */
-public class LinkedList<T> implements List<T>{
+public class LinkedList<T> implements List<T> {
 
     private int size;
     private Node<T> head;

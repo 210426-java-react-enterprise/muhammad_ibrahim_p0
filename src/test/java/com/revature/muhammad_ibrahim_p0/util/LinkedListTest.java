@@ -1,7 +1,5 @@
 package com.revature.muhammad_ibrahim_p0.util;
 
-import com.revature.muhammad_ibrahim_p0.LinkedList;
-
 public class LinkedListTest {
 
     private LinkedList<String> sut;
