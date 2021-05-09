@@ -5,14 +5,14 @@
  *
 * */
 
-package com.revature.muhammad_ibrahim_p0.Screens;
+package com.revature.muhammad_ibrahim_p0.screens;
 
 import com.revature.muhammad_ibrahim_p0.DAO.UserDAO;
 import com.revature.muhammad_ibrahim_p0.models.HumanUsers;
 
 import java.io.BufferedReader;
 
-public class RegisterScreen {
+public class RegisterScreen extends Screen{
 
     private UserDAO userDAO = new UserDAO();
     private BufferedReader consoleReader;

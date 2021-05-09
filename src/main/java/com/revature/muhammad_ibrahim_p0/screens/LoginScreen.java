@@ -3,7 +3,7 @@
  * This is screen is where the app user is allowed to login into their existing account.
  * */
 
-package com.revature.muhammad_ibrahim_p0.Screens;
+package com.revature.muhammad_ibrahim_p0.screens;
 
 import com.revature.muhammad_ibrahim_p0.DAO.UserDAO;
 import com.revature.muhammad_ibrahim_p0.models.HumanUsers;
@@ -11,7 +11,7 @@ import com.revature.muhammad_ibrahim_p0.models.HumanUsers;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-public class LoginScreen {
+public class LoginScreen extends Screen {
     private UserDAO userDAO = new UserDAO();
     private BufferedReader consoleReader;
 

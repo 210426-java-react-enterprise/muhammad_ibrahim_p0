@@ -1,6 +1,11 @@
-package com.revature.muhammad_ibrahim_p0.util;
+package com.revature.muhammad_ibrahim_p0;
 
 public interface List<T> {
+
+    // all fields declared within interfaces are implicitly public, static and final
+    // all method stubs declared within interfaces are implicitly public and abstract
+    // interfaces do not have constructors
+
     // T is the generic name for this collection
 
     // list needs to be able to add,

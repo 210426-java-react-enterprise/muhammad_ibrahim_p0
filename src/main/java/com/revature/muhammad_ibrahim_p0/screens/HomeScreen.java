@@ -3,12 +3,13 @@
  * This is the home page of the application
  * */
 
-package com.revature.muhammad_ibrahim_p0.Screens;
+package com.revature.muhammad_ibrahim_p0.screens;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import com.revature.muhammad_ibrahim_p0.Screens.LoginScreen;
 
-public class HomeScreen {
+public class HomeScreen extends Screen {
 
     public void render(){
 

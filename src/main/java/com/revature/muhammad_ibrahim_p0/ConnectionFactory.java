@@ -1,6 +1,5 @@
-package com.revature.muhammad_ibrahim_p0.util;
+package com.revature.muhammad_ibrahim_p0;
 
-import java.io.IOException;
 import java.util.Properties;
 
 public class ConnectionFactory {
