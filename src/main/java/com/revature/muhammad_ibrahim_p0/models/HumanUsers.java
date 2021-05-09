@@ -1,3 +1,4 @@
+package com.revature.muhammad_ibrahim_p0.models;
 /**
  * 5/5/21
  * This POJO is for creating what the user of this application would look like.
@@ -6,9 +7,6 @@
  * We use getters and setters to access the private fields of the HumanUsers object.
  * Just an encapsulation of fields
  */
-
-package com.revature.muhammad_ibrahim_p0.models;
-
 public class HumanUsers {
 
     private int id;

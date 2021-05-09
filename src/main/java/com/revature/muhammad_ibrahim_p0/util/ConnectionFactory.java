@@ -16,10 +16,10 @@ public class ConnectionFactory {
         }
     }
 
-    private ConnectionFactoey() {
+ /*   private ConnectionFactoey() {
         try {
             properties.load(new FileReader());
         }
     }
-
+*/
 }

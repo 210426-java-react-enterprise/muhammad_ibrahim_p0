@@ -16,7 +16,7 @@ public class LinkedList<T> implements List<T>{
     public void add(T data) throws IllegalArgumentException{
 
         if (data == null) {
-            throw new IllegalArgumentException("This linked list does not accept null values")
+            throw new IllegalArgumentException("This linked list does not accept null values");
         }
 
         // creating new node
