@@ -11,6 +11,11 @@ import com.revature.muhammad_ibrahim_p0.screens.LoginScreen;
 
 public class HomeScreen extends Screen {
 
+    public HomeScreen(BufferedReader consoleReader) {
+        super("HomeScreen", "/homescreen");
+
+    }
+
     public void render(){
 
         System.out.println("+******************************+");

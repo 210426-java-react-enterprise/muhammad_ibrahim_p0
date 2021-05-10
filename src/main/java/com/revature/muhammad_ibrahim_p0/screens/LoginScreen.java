@@ -12,10 +12,13 @@ import java.io.BufferedReader;
 import java.io.IOException;
 
 public class LoginScreen extends Screen {
+
     private UserDAO userDAO = new UserDAO();
     private BufferedReader consoleReader;
 
-    public LoginScreen(BufferedReader consoleReader) { this.consoleReader = consoleReader;}
+    public LoginScreen(BufferedReader consoleReader) {
+        super("LoginScren", "/register");
+        this.consoleReader = consoleReader;}
 
     public void render(){
         String username;

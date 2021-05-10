@@ -17,7 +17,9 @@ public class RegisterScreen extends Screen{
     private UserDAO userDAO = new UserDAO();
     private BufferedReader consoleReader;
 
-    public RegisterScreen(BufferedReader consoleReader){ this.consoleReader = consoleReader;}
+    public RegisterScreen(BufferedReader consoleReader){
+        super("RegisterScreen", "/register");
+        this.consoleReader = consoleReader;}
 
     public void render() {
         String firstname;
