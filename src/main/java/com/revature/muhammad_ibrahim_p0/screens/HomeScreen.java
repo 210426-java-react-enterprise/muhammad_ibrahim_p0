@@ -8,14 +8,22 @@ package com.revature.muhammad_ibrahim_p0.screens;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import com.revature.muhammad_ibrahim_p0.screens.LoginScreen;
+import com.revature.muhammad_ibrahim_p0.util.ScreenRouter;
+import static com.revature.muhammad_ibrahim_p0.Driver.app;
 
 public class HomeScreen extends Screen {
+    private BufferedReader consoleReader;
+    private ScreenRouter router;
 
-    public HomeScreen(BufferedReader consoleReader) {
-        super("HomeScreen", "/homescreen");
 
+    // dependency injection allows us to inject router into HomeScreen
+    public HomeScreen(BufferedReader consoleReader, ScreenRouter router) {
+        super("HomeScreen", "/welcome");
+        this.consoleReader = consoleReader;
+        this.router = router;
     }
 
+    @Override
     public void render(){
 
         System.out.println("+******************************+");
@@ -25,7 +33,7 @@ public class HomeScreen extends Screen {
         System.out.println("Press 3 to Exit");
 
 
-        try(BufferedReader consoleReader = new BufferedReader(new InputStreamReader(System.in))){
+        try {
             System.out.print(">> ");
             String userInput = consoleReader.readLine();
 
@@ -33,12 +41,18 @@ public class HomeScreen extends Screen {
                 case "1":
                     System.out.print("Navigating to the Register screen");
                     RegisterScreen registerScreen = new RegisterScreen(consoleReader);
-                    registerScreen.render();
+                    // registerScreen.render();
+                    router.navigate("/register");
                     break;
                 case "2":
                     System.out.println("Navigating to the Login screen");
                     LoginScreen loginScreen = new LoginScreen(consoleReader);
-                    loginScreen.render();
+                    // loginScreen.render();
+                    router.navigate("/login");
+                    break;
+                case "3":
+                    System.out.println("Exiting the application!");
+                    app().setAppRunning(false);
                     break;
                 default:
                     System.out.println("Invalid selection!");

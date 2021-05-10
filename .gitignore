@@ -28,3 +28,6 @@ target/
 # IDE-specific files and folders
 .idea/
 *.iml
+
+#properties files
+*.properties

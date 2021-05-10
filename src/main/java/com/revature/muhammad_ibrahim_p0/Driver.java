@@ -5,13 +5,25 @@ package com.revature.muhammad_ibrahim_p0;
 
 import com.revature.muhammad_ibrahim_p0.screens.HomeScreen;
 import com.revature.muhammad_ibrahim_p0.models.HumanUsers;
+import com.revature.muhammad_ibrahim_p0.util.AppState;
 
-public class driver {
+public class Driver {
+
+    private static AppState app = new AppState();
 
     public static void main(String[] args) {
 
-        HomeScreen welcome = new HomeScreen();
-        welcome.render();
+        while (app.isAppRunning()){
+            app.getRouter().navigate("/welcome");
+        }
 
+    /*    HomeScreen welcome = new HomeScreen();
+        //welcome.render();
+        router.navigate("/welcome");*/
+
+    }
+
+    public static AppState app(){
+        return app;
     }
 }
