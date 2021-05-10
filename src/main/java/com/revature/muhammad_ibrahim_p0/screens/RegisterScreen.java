@@ -56,7 +56,7 @@ public class RegisterScreen extends Screen{
             HumanUsers newUser = new HumanUsers(username, password, firstname,lastname, email, phone_number);
             System.out.println("HumanUsers constructor invoked!");
             System.out.println("New user created with the profile: " + newUser);
-            userDAO.saveUserToFile(newUser);
+            // userDAO.saveUserToFile(newUser);
 
 
         }catch (Exception e){

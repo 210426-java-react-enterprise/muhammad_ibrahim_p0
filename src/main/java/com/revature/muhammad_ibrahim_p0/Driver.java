@@ -16,11 +16,6 @@ public class Driver {
         while (app.isAppRunning()){
             app.getRouter().navigate("/welcome");
         }
-
-    /*    HomeScreen welcome = new HomeScreen();
-        //welcome.render();
-        router.navigate("/welcome");*/
-
     }
 
     public static AppState app(){
