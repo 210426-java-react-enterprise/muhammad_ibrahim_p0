@@ -41,4 +41,33 @@ public class LinkedListTest {
         // Assert
         // Sometimes blank, especially if you expect an exception to be thrown
     }
+
+    @Test
+    public void test_popWithEmptyList() {
+        // Arrange
+
+        // Act
+        String actualResult = sut.pop();
+
+        // Assert
+        Assert.assertNull(actualResult);
+    }
+
+    @Test
+    public void test_popWithPopulatedList() {
+        // Arrange
+        sut.add("test data 1");
+        sut.add("test data 2");
+        String expectedResult = "test data 1";
+        int expectedSize = 1;
+
+        // Act
+        String actualResult = sut.pop();
+
+        // Assert
+        int actualSize = sut.size();
+        Assert.assertEquals(expectedResult, actualResult);
+        Assert.assertEquals(expectedSize, actualSize);
+
+    }
 }
