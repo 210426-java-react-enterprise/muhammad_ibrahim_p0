@@ -1,22 +1,44 @@
 package com.revature.muhammad_ibrahim_p0.util;
 
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
 public class LinkedListTest {
 
     private LinkedList<String> sut;
-    private LinkedList<? extends Screen> ex ; // generic with subtyping
-    private LinkedList<?> ex2; // the ? denotes wildcard
 
-    public void test_add_withNull(){
-        //Arrange test
+    @Before
+    public void setUpTest(){
         sut = new LinkedList<>();
+    }
 
-        // Act (perform the action to be tested
-        try {
-            sut.add(null);
-            System.err.println("Test: test_add_withNull did not pass!");
-        } catch(IllegalArgumentException e) {
-            // Assert
-            System.out.println("Test: test_add_withNull passed!");
-        }
+    @After
+    public void tearDownTest() {
+        sut = null;
+    }
+
+    @Test
+    public void test_addWithNonNullValue() {
+        // Arrange (prepare the test)
+        int expectedSize = 1;
+
+        // Act (do the test)
+        sut.add("data");
+
+        // Assert (ensure the result)
+        int actualSize = sut.size();
+        Assert.assertEquals(expectedSize, actualSize);
+    }
+    @Test(expected = IllegalArgumentException.class)
+    public void test_addWithNullValue() {
+        // Arrange
+
+        // Act
+        sut.add(null);
+
+        // Assert
+        // Sometimes blank, especially if you expect an exception to be thrown
     }
 }

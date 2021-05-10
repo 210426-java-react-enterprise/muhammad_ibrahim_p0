@@ -7,7 +7,7 @@ package com.revature.muhammad_ibrahim_p0.screens;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import com.revature.muhammad_ibrahim_p0.Screens.LoginScreen;
+import com.revature.muhammad_ibrahim_p0.screens.LoginScreen;
 
 public class HomeScreen extends Screen {
 
