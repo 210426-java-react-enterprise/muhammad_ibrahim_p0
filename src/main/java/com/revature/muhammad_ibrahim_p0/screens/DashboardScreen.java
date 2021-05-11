@@ -20,6 +20,15 @@ public class DashboardScreen extends Screen{
         String firstname;
         String lastname;
 
+        try {
+
+            System.out.println("+**************************************");
+            System.out.printf("Welcome to your dashboard %s! \n\nWhat would you like to do today?");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
 
     }
 }
