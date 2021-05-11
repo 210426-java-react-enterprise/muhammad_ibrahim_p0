@@ -13,6 +13,28 @@ public class UserDAO {
 
     public void saveUserToDB(Customer newUser){
 
+        try (Connection conn = ConnectionFactory.getInstance().getConnection()){
+            String sqlInsertUser = "insert into project_0.users (username, password, email, first_name, last_name, " +
+                    "phone_number) values (?,?,?,?,?,?)";
+            PreparedStatement pstmt = conn.prepareStatement(sqlInsertUser, new String[]{"user_id"});
+            pstmt.setString(1, newUser.getUsername());
+            pstmt.setString(2, newUser.getPassword());
+            pstmt.setString(3, newUser.getEmail());
+            pstmt.setString(4, newUser.getFirst_name());
+            pstmt.setString(5, newUser.getLast_name());
+            pstmt.setString(6, newUser.getPhone_number());
+            int rowsInserted = pstmt.executeUpdate();
+
+            if (rowsInserted != 0 ){
+                ResultSet rs = pstmt.getGeneratedKeys();
+                while (rs.next()) {
+                    newUser.setId(rs.getInt("user_id"));
+                }
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     // login method
@@ -36,7 +58,6 @@ public class UserDAO {
                 user.setLast_name(rs.getString("last_name"));
                 user.setEmail(rs.getString("email"));
                 user.setPhone_number(rs.getString("phone_number"));
-
             }
 
         } catch(SQLException e) {
