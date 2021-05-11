@@ -6,7 +6,7 @@
 package com.revature.muhammad_ibrahim_p0.screens;
 
 import com.revature.muhammad_ibrahim_p0.DAO.UserDAO;
-import com.revature.muhammad_ibrahim_p0.models.HumanUsers;
+import com.revature.muhammad_ibrahim_p0.models.Customer;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -36,7 +36,7 @@ public class LoginScreen extends Screen {
             password = consoleReader.readLine();
 
             if(username != null && !username.isEmpty() && password != null && !password.isEmpty()){
-               HumanUsers confirmUser = userDAO.findUserByUsernameAndPassword(username,password);
+               Customer confirmUser = userDAO.findUserByUsernameAndPassword(username,password);
                if (confirmUser != null) {
                    System.out.println("Login Successful!");
                }

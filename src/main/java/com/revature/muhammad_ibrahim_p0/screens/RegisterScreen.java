@@ -8,7 +8,7 @@
 package com.revature.muhammad_ibrahim_p0.screens;
 
 import com.revature.muhammad_ibrahim_p0.DAO.UserDAO;
-import com.revature.muhammad_ibrahim_p0.models.HumanUsers;
+import com.revature.muhammad_ibrahim_p0.models.Customer;
 
 import java.io.BufferedReader;
 
@@ -53,8 +53,8 @@ public class RegisterScreen extends Screen{
             System.out.print("Phone number: ");
             phone_number = consoleReader.readLine();
 
-            HumanUsers newUser = new HumanUsers(username, password, firstname,lastname, email, phone_number);
-            System.out.println("HumanUsers constructor invoked!");
+            Customer newUser = new Customer(username, password, firstname,lastname, email, phone_number);
+            System.out.println("Customer constructor invoked!");
             System.out.println("New user created with the profile: " + newUser);
             // userDAO.saveUserToFile(newUser);
 

@@ -1,6 +1,6 @@
 package com.revature.muhammad_ibrahim_p0.DAO;
 
-import com.revature.muhammad_ibrahim_p0.models.HumanUsers;
+import com.revature.muhammad_ibrahim_p0.models.Customer;
 import com.revature.muhammad_ibrahim_p0.util.ConnectionFactory;
 
 import java.io.*;
@@ -11,13 +11,13 @@ import java.sql.SQLException;
 
 public class UserDAO {
 
-    public void saveUserToDB(HumanUsers newUser){
+    public void saveUserToDB(Customer newUser){
 
     }
 
     // login method
-    public HumanUsers findUserByUsernameAndPassword(String username, String password) {
-        HumanUsers user = null;
+    public Customer findUserByUsernameAndPassword(String username, String password) {
+        Customer user = null;
 
         try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
 
@@ -28,7 +28,7 @@ public class UserDAO {
 
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
-                user = new HumanUsers();
+                user = new Customer();
                 user.setId(rs.getInt("id"));
                 user.setUsername(rs.getString("username"));
                 user.setPassword(rs.getString("password"));

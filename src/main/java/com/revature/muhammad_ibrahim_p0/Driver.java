@@ -4,7 +4,7 @@ package com.revature.muhammad_ibrahim_p0;
  * */
 
 import com.revature.muhammad_ibrahim_p0.screens.HomeScreen;
-import com.revature.muhammad_ibrahim_p0.models.HumanUsers;
+import com.revature.muhammad_ibrahim_p0.models.Customer;
 import com.revature.muhammad_ibrahim_p0.util.AppState;
 
 public class Driver {

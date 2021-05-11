@@ -7,7 +7,7 @@ package com.revature.muhammad_ibrahim_p0.models;
  * We use getters and setters to access the private fields of the HumanUsers object.
  * Just an encapsulation of fields
  */
-public class HumanUsers {
+public class Customer {
 
     private int id;
     private String username;
@@ -17,12 +17,12 @@ public class HumanUsers {
     private String last_name;
     private String phone_number;
 
-    public HumanUsers(){
+    public Customer(){
 
     }
 
-    public HumanUsers(String username,String password, String email,
-                      String first_name, String last_name, String phone_number){
+    public Customer(String username, String password, String email,
+                    String first_name, String last_name, String phone_number){
         System.out.println("HumanUsers");
         this.username = username;
         this.password = password;
