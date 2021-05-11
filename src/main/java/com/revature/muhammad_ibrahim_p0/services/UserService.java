@@ -2,6 +2,7 @@ package com.revature.muhammad_ibrahim_p0.services;
 
 import com.revature.muhammad_ibrahim_p0.DAO.UserDAO;
 import com.revature.muhammad_ibrahim_p0.exceptions.InvalidRequestException;
+import com.revature.muhammad_ibrahim_p0.exceptions.ResourcePersistenceException;
 import com.revature.muhammad_ibrahim_p0.models.Customer;
 
 public class UserService {
@@ -12,11 +13,20 @@ public class UserService {
         this.userDAO = userDAO;
     }
 
-    public void register(Customer newUser) throws InvalidRequestException{
+    public void register(Customer newUser) throws InvalidRequestException, ResourcePersistenceException{
 
         if (!isUserValid(newUser)) {
             throw new InvalidRequestException("Invalid new user data provided!");
         }
+        if (!userDAO.isUsernameAvailable(newUser.getUsername()))
+        {
+            throw new ResourcePersistenceException("The provided username is already taken!");
+        }
+        if (!userDAO.isEmailAvailable(newUser.getEmail()))
+        {
+            throw new ResourcePersistenceException("The provided email is already taken!");
+        }
+        userDAO.saveUserToDB(newUser);
     }
 
     public boolean isUserValid(Customer user) {

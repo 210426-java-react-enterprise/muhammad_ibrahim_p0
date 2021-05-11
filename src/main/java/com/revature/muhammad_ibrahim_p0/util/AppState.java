@@ -4,6 +4,7 @@ import com.revature.muhammad_ibrahim_p0.DAO.UserDAO;
 import com.revature.muhammad_ibrahim_p0.screens.HomeScreen;
 import com.revature.muhammad_ibrahim_p0.screens.LoginScreen;
 import com.revature.muhammad_ibrahim_p0.screens.RegisterScreen;
+import com.revature.muhammad_ibrahim_p0.services.UserService;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -22,10 +23,11 @@ public class AppState {
         consoleReader = new BufferedReader(new InputStreamReader(System.in));
 
         final UserDAO userDAO = new UserDAO();
+        final UserService userService = new UserService(userDAO);
 
         router = new ScreenRouter();
         router.addScreen(new HomeScreen(consoleReader, router))
-                .addScreen(new RegisterScreen(consoleReader))
+                .addScreen(new RegisterScreen(consoleReader, userService, router))
                 .addScreen(new LoginScreen(consoleReader));
 
         System.out.println("Application Initialized");

@@ -8,18 +8,26 @@
 package com.revature.muhammad_ibrahim_p0.screens;
 
 import com.revature.muhammad_ibrahim_p0.DAO.UserDAO;
+import com.revature.muhammad_ibrahim_p0.exceptions.InvalidRequestException;
+import com.revature.muhammad_ibrahim_p0.exceptions.ResourcePersistenceException;
 import com.revature.muhammad_ibrahim_p0.models.Customer;
+import com.revature.muhammad_ibrahim_p0.services.UserService;
+import com.revature.muhammad_ibrahim_p0.util.ScreenRouter;
 
 import java.io.BufferedReader;
 
 public class RegisterScreen extends Screen{
 
-    private UserDAO userDAO = new UserDAO();
+    private UserService userService;
     private BufferedReader consoleReader;
+    private ScreenRouter router;
 
-    public RegisterScreen(BufferedReader consoleReader){
+    public RegisterScreen(BufferedReader consoleReader, UserService userService, ScreenRouter router){
         super("RegisterScreen", "/register");
-        this.consoleReader = consoleReader;}
+        this.consoleReader = consoleReader;
+        this.userService = userService;
+        this.router = router;
+    }
 
     public void render() {
         String firstname;
@@ -54,14 +62,16 @@ public class RegisterScreen extends Screen{
             phone_number = consoleReader.readLine();
 
             Customer newUser = new Customer(username, password, firstname,lastname, email, phone_number);
-            System.out.println("Customer constructor invoked!");
-            System.out.println("Before save: " + newUser);
-            userDAO.saveUserToDB(newUser);
-            System.out.println("After save to DB: " + newUser);
+            //System.out.println("Customer constructor invoked!");
+            userService.register(newUser);
+            router.navigate("/login");
 
 
-        }catch (Exception e){
-
+        } catch (InvalidRequestException | ResourcePersistenceException e) {
+            e.printStackTrace();
+        }
+        catch (Exception e){
+            e.printStackTrace();
         }
     }
 }

@@ -40,7 +40,7 @@ public class HomeScreen extends Screen {
             switch (userInput){
                 case "1":
                     System.out.print("Navigating to the Register screen");
-                    RegisterScreen registerScreen = new RegisterScreen(consoleReader);
+                    //RegisterScreen registerScreen = new RegisterScreen(consoleReader);
                     // registerScreen.render();
                     router.navigate("/register");
                     break;
