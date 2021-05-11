@@ -14,7 +14,7 @@ public class UserDAO {
     public void saveUserToDB(Customer newUser){
 
         try (Connection conn = ConnectionFactory.getInstance().getConnection()){
-            String sqlInsertUser = "insert into project_0.users (username, password, email, first_name, last_name, " +
+            String sqlInsertUser = "insert into project_0.customer (username, password, email, first_name, last_name, " +
                     "phone_number) values (?,?,?,?,?,?)";
             PreparedStatement pstmt = conn.prepareStatement(sqlInsertUser, new String[]{"user_id"});
             pstmt.setString(1, newUser.getUsername());
@@ -43,7 +43,7 @@ public class UserDAO {
 
         try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
 
-            String sql = "select * from users where username = ? and password = ?";
+            String sql = "select * from customer where username = ? and password = ?";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, username);
             pstmt.setString(2, password);
@@ -54,7 +54,7 @@ public class UserDAO {
                 user.setId(rs.getInt("id"));
                 user.setUsername(rs.getString("username"));
                 user.setPassword(rs.getString("password"));
-                user.setFirst_name(rs.getString("firstname"));
+                user.setFirst_name(rs.getString("first_name"));
                 user.setLast_name(rs.getString("last_name"));
                 user.setEmail(rs.getString("email"));
                 user.setPhone_number(rs.getString("phone_number"));

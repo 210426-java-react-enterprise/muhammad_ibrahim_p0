@@ -55,8 +55,9 @@ public class RegisterScreen extends Screen{
 
             Customer newUser = new Customer(username, password, firstname,lastname, email, phone_number);
             System.out.println("Customer constructor invoked!");
-            System.out.println("New user created with the profile: " + newUser);
-            // userDAO.saveUserToFile(newUser);
+            System.out.println("Before save: " + newUser);
+            userDAO.saveUserToDB(newUser);
+            System.out.println("After save to DB: " + newUser);
 
 
         }catch (Exception e){
