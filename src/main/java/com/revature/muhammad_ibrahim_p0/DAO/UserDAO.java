@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UserDAO {
-    
+
     public void saveUserToDB(HumanUsers newUser){
 
     }
@@ -44,19 +44,5 @@ public class UserDAO {
         }
         return user;
     }
-    /*public HumanUsers findUserByUsernameAndPassword(String username, String password){
-        try(BufferedReader reader = new BufferedReader(new FileReader(userDataFile))){
-            String savedRecord;
-            while((savedRecord = reader.readLine()) != null){
-                String[] userData = savedRecord.split(";");
-                if (userData[0].equals(username) && userData[1].equals(password)){
-                    return new HumanUsers(userData[0],userData[1],userData[2],userData[3],userData[4],userData[5] );
-                }
-            }
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-        return null;
 
-    }*/
 }
