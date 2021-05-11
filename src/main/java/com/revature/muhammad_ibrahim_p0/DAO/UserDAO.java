@@ -37,6 +37,48 @@ public class UserDAO {
         }
     }
 
+    public boolean isUsernameAvailable(String username) {
+
+        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
+
+            String sql = "select * from customer where username = ?";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, username);
+
+
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+               return false;
+            }
+
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
+        return true;
+    }
+
+
+    // checking to make sure email is unique and not persisted already during registration
+    public boolean isEmailAvailable(String email) {
+
+        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
+
+            String sql = "select * from customer where email = ?";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, email);
+
+
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                return false;
+            }
+
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
+        return true;
+    }
+
     // login method
     public Customer findUserByUsernameAndPassword(String username, String password) {
         Customer user = null;
