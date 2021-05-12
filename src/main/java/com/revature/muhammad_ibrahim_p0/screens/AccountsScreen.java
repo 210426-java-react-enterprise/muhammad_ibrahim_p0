@@ -16,5 +16,7 @@ public class AccountsScreen extends Screen{
     }
     public void render(){
         System.out.println("This is where the account creation would be implemented");
+
+        
     }
 }
