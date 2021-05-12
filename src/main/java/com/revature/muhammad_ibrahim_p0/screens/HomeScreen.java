@@ -27,7 +27,10 @@ public class HomeScreen extends Screen {
     public void render(){
 
         System.out.println("+******************************+");
+        System.out.println("+******************************+");
         System.out.println("*****WELCOME TO WIDAD BANK******");
+        System.out.println("+******************************+");
+        System.out.println("+******************************+");
         System.out.println("Press 1 to Register");
         System.out.println("Press 2 to login");
         System.out.println("Press 3 to Exit");
@@ -46,7 +49,7 @@ public class HomeScreen extends Screen {
                     break;
                 case "2":
                     System.out.println("Navigating to the Login screen");
-                    LoginScreen loginScreen = new LoginScreen(consoleReader);
+                    //LoginScreen loginScreen = new LoginScreen(consoleReader);
                     // loginScreen.render();
                     router.navigate("/login");
                     break;
