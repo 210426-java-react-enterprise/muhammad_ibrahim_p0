@@ -8,7 +8,7 @@ public class CustomerTracker {
 
     private Customer customer;
 
-    //public CustomerTracker(Customer customer, ArrayList<CustomerInfo> customerInfo) { this.customer = customer; }
+
     public CustomerTracker(Customer customer) { this.customer = customer; }
 
     public Customer getCustomer() {
@@ -19,5 +19,5 @@ public class CustomerTracker {
         this.customer = customer;
     }
 
-    //public ArrayList<CustomerInfo>
+
 }
