@@ -93,7 +93,7 @@ public class UserDAO {
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
                 user = new Customer();
-                user.setId(rs.getInt("id"));
+                user.setId(rs.getInt("user_id"));
                 user.setUsername(rs.getString("username"));
                 user.setPassword(rs.getString("password"));
                 user.setFirst_name(rs.getString("first_name"));

@@ -23,7 +23,7 @@ public class DashboardScreen extends Screen{
         String lastname;
 
         System.out.println("+**************************************");
-        System.out.printf("Welcome to your dashboard %s! \n\nHere's info on your account.");
+        System.out.println("Welcome to your dashboard %s! \n\nHere's info on your account.");
         System.out.println("What would you like to do today?");
         System.out.println("Press 1 to Open a new account");
         System.out.println("Press 2 to Deposit");
@@ -32,12 +32,12 @@ public class DashboardScreen extends Screen{
 
         try {
 
-            System.out.println(">> ");
+            System.out.print(">> ");
             String userInput = consoleReader.readLine();
 
             switch (userInput) {
                 case "1":
-                    System.out.println("Lets create a new account for you!\n|\n|\nLoading...");
+                    System.out.println("Lets create a new account for you!\n\nLoading...\n\n");
                     router.navigate("/accounts");
                     break;
                 case "2":

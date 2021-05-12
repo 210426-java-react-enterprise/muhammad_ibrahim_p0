@@ -8,13 +8,13 @@ import java.io.BufferedReader;
  * This class should tell us the balance of the customer's account
  */
 
-public class Transaction extends Screen{
+public class TransactionScreen extends Screen{
 
     private BufferedReader consoleReader;
     private ScreenRouter router;
 
-    public Transaction(BufferedReader consoleReader, ScreenRouter router) {
-        super("Transaction", "/balance");
+    public TransactionScreen(BufferedReader consoleReader, ScreenRouter router) {
+        super("TransactionScreen", "/balance");
         this.consoleReader = consoleReader;
         this.router = router;
     }
