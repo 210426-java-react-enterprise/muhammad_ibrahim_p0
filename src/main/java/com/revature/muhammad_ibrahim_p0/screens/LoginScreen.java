@@ -47,12 +47,12 @@ public class LoginScreen extends Screen {
                }
                else{
                    System.out.println("Login Failed!");
-                   router.navigate("/welcome");
+                   // router.navigate("/welcome");
                }
             }
             else{
                 System.out.println("Please provide login credentials!");
-                router.navigate("/welcome");
+                // router.navigate("/welcome");
             }
 
 
