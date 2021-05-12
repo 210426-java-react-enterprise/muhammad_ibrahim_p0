@@ -28,7 +28,8 @@ public class DashboardScreen extends Screen{
         System.out.println("Press 1 to Open a new account");
         System.out.println("Press 2 to Deposit");
         System.out.println("Press 3 to Withdraw");
-        System.out.println("Press 4 to Exit the application");
+        System.out.println("Press 4 to View balance");
+        System.out.println("Press 5 to Exit the application");
 
         try {
 
@@ -48,7 +49,9 @@ public class DashboardScreen extends Screen{
                     router.navigate("/withdraw");
                     break;
                 case "4":
-                    System.out.println("Exiting the application!");
+                    router.navigate("/balance");
+                case "5":
+                    System.out.println("Exiting the application. \nHave a great day ahead!");
                     app().setAppRunning(false);
                     break;
                 default:
